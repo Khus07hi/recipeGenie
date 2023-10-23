@@ -17,7 +17,7 @@ const /** {NodeElement} */ $savedRecipeContainer = document.querySelector("[data
 $savedRecipeContainer.innerHTML = `<h2 class="headline-small section-title">All saved Recipes</h2>`;
 
 const /**{NodeElement} */ $gridList = document.createElement("div");
-$gridList.classList.add("grid-List");
+$gridList.classList.add("grid-list");
 
 if (savedRecipes.length) {
     savedRecipes.map((savedRecipe, index) => {
