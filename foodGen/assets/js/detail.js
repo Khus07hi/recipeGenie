@@ -16,9 +16,6 @@ const /** {NodeElement} */ $detailContainer = document.querySelector( "[data-det
 ACCESS_POINT += `/${window.location.search.slice(window.location.search.indexOf("=") + 1)}`;
 
 fetchData(null, data => {
-
-    
-
     const {
         images : { LARGE, REGULAR, SMALL, THUMBNAIL },
         label: title,
@@ -31,7 +28,8 @@ fetchData(null, data => {
         dishType = [],
         yield: servings = 0,
         ingredientLines = [],
-        uri
+        uri,
+        url: recipeUrl
     } = data.recipe;
 
     document.title = `${title} - Cook.io`;
@@ -95,6 +93,11 @@ fetchData(null, data => {
                 <span class="label-large unsaved-text">Unsaved</span>
 
             </button>
+
+             <a href="${recipeUrl}" class="btn btn-secondary has-state has-icon view-recipe" onclick="viewRecipe('${recipeUrl}')">
+                <span class="material-symbols-outlined recipe-book" aria-hidden="true">book</span>
+                <span class="label-large recipe-text">View Recipe</span>
+            </a>
         </div>
 
         <div class="detail-author label-large"> 
